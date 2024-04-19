@@ -6,10 +6,10 @@ class Television:
         MAX_VOLUME (int): The maximum volume level.
         MIN_CHANNEL (int): The minimum channel number.
         MAX_CHANNEL (int): The maximum channel number.
-        _status (bool): The power status of the television.
-        _muted (bool): Whether the television is muted.
-        _volume (int): The current volume level of the television.
-        _channel (int): The current channel number of the television.
+        status: The power status of the television.
+        muted: Whether the television is muted.
+        volume: The current volume level of the television.
+        channel: The current channel number of the television.
     """
 
     MIN_VOLUME: int = 0

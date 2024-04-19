@@ -2,10 +2,10 @@
 class Television:
     """
     Attributes:
-        MIN_VOLUME (int): The minimum volume level.
-        MAX_VOLUME (int): The maximum volume level.
-        MIN_CHANNEL (int): The minimum channel number.
-        MAX_CHANNEL (int): The maximum channel number.
+        MIN_VOLUME : The minimum volume level.
+        MAX_VOLUME : The maximum volume level.
+        MIN_CHANNEL : The minimum channel number.
+        MAX_CHANNEL : The maximum channel number.
         status: The power status of the television.
         muted: Whether the television is muted.
         volume: The current volume level of the television.
@@ -34,7 +34,7 @@ class Television:
 
     def mute(self) -> None:
         """
-        Toggles the mute status of the television.
+        Toggles the mute status of the television on and off.
         """
         if self._status:
             self._muted = not self._muted
@@ -63,7 +63,7 @@ class Television:
 
     def volume_up(self) -> None:
         """
-        Increases the volume level by 1.
+        Increases the volume level by 1 of the current volume.
         """
         if self._status:
             if self._muted:
@@ -73,7 +73,7 @@ class Television:
 
     def volume_down(self) -> None:
         """
-        Decreases the volume level by 1.
+        Decreases the volume level by 1 of the current.
         """
         if self._status:
             if self._muted:
@@ -83,7 +83,7 @@ class Television:
 
     def __str__(self) -> str:
         """
-        Returns a string representation of the television object.
+        Returns a string of the television object.
         """
         status_str = "True" if self._status else "False"
         return f"Power = {status_str}, Channel = {self._channel}, Volume = {self._volume}"

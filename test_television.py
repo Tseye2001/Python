@@ -20,7 +20,7 @@ def test_power(tv):
 
 
 def test_mute(tv):
-   tv.power()  # Ensure TV is powered on
+   tv.power()  
    tv.mute()
    assert tv._muted == True
    tv.mute()
@@ -37,7 +37,7 @@ def test_channel_up(tv):
 
 
 def test_channel_down(tv):
-   tv.power()  # Ensure TV is powered on
+   tv.power() 
    tv.channel_down()
    assert tv._channel == Television.MAX_CHANNEL
    for _ in range(Television.MAX_CHANNEL - Television.MIN_CHANNEL + 1):
@@ -46,22 +46,18 @@ def test_channel_down(tv):
 
 
 def test_volume_up(tv):
-   # Volume up when TV is off
    tv.volume_up()
    assert tv._volume == Television.MIN_VOLUME
 
-   tv.power()  # Ensure TV is powered on
+   tv.power()  
 
-   # Volume up when TV is on
    tv.volume_up()
    assert tv._volume == Television.MIN_VOLUME + 1
 
-   # Mute the TV and volume up
    tv.mute()
    tv.volume_up()
    assert tv._volume == Television.MIN_VOLUME + 2
 
-   # Increase volume to maximum and volume up
    for _ in range(Television.MAX_VOLUME - Television.MIN_VOLUME):
        tv.volume_up()
    tv.volume_up()
@@ -69,26 +65,22 @@ def test_volume_up(tv):
 
 
 def test_volume_down(tv):
-   # Volume down when TV is off
+   
    tv.volume_down()
    assert tv._volume == Television.MIN_VOLUME
 
-   tv.power()  # Ensure TV is powered on
+   tv.power()  
 
-   # Increase volume to maximum
    for _ in range(Television.MAX_VOLUME - Television.MIN_VOLUME):
        tv.volume_up()
 
-   # Volume down when TV is on
    tv.volume_down()
    assert tv._volume == Television.MAX_VOLUME - 1
 
-   # Mute the TV and volume down
    tv.mute()
    tv.volume_down()
    assert tv._volume == Television.MAX_VOLUME - 2
 
-   # Decrease volume to minimum and volume down
-   for _ in range(Television.MAX_VOLUME - Television.MIN_VOLUME + 1):  # Include the +1 for wraparound
+   for _ in range(Television.MAX_VOLUME - Television.MIN_VOLUME + 1): 
        tv.volume_down()
    assert tv._volume == Television.MIN_VOLUME

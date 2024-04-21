@@ -1,4 +1,3 @@
-#television.py
 class Television:
     """
     Attributes:

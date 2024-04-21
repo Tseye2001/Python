@@ -1,4 +1,3 @@
-#test_television.py
 import pytest
 from television import *
 

@@ -6,9 +6,9 @@ class Television:
         _MIN_CHANNEL : The minimum channel number.
         _MAX_CHANNEL : The maximum channel number.
         _status: The power status of the television.
-        _muted: Whether the television is muted.
-        _volume: The current volume level of the television.
-        _channel: The current channel number of the television.
+        muted: Whether the television is muted.
+        volume: The current volume level of the television.
+        channel: The current channel number of the television.
     """
 
     _MIN_VOLUME: int = 0
